@@ -1,5 +1,5 @@
 const http = require('http');
-const port = 8080;
+const port = 8099;
 const fs = require('fs');
 
 function requestHandler(req, res) {
@@ -8,10 +8,10 @@ function requestHandler(req, res) {
     let filepath;
     switch (req.url) {
         case '/':
-            filepath = './index.html';
+            filepath = 'Server/index.html';
             break;
         default:
-            filepath = './404.html';
+            filepath = 'Server/404.html';
     }
 
     fs.readFile(filepath, function(err, data) {
